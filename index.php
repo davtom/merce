@@ -6,6 +6,7 @@
 <body>
     <?php
         require_once 'pages/config.php';
+        require_once 'activities.php';
 
         $lz = new listaZakupow;
 
@@ -42,13 +43,15 @@
                     } else{
                         $kupione = ' ';
                     }
-                    echo '<li>'.$towar.' <a href="index.php?akcja=zmien&id='.$towarid.'">['.$kupione.']</a>
-                    <a href="index.php?akcja=usun&id='.$towarid.'">usuń</a></li>';
+                    echo '<li>'.$towar.'
+                    <a href="index.php?akcja=zmien&id='.$towarid.'">['.$kupione.']</a>
+                    <a href="index.php?akcja=usun&id='.$towarid.'"><input type="submit" value="usuń" /></a>
+                    </li>';
                 echo '</ul>';
             }
         }
     ?>
-    <form action="index.php?akcja=dodaj" method="post">
+        <form action="index.php?akcja=dodaj" method="post">
         Towar: <input type="text" name="towar" />
         <input type="submit" value="Dodaj" />
 </body>
